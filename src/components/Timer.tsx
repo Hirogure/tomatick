@@ -27,11 +27,11 @@ export default function Timer() {
 
   return (
     <div
-      className="min-h-screen flex flex-col transition-colors duration-700"
+      className="min-h-screen flex flex-col items-center transition-colors duration-700"
       style={{ backgroundColor: bgColor }}
     >
       {/* ヘッダー */}
-      <header className="flex items-center justify-between px-5 py-4 max-w-md mx-auto w-full">
+      <header className="flex items-center justify-between px-6 py-4 w-full max-w-lg">
         <div className="flex items-center gap-2">
           <span className="text-2xl select-none">🍅</span>
           <span className="text-xl font-bold text-white tracking-tight">tomatick</span>
@@ -55,7 +55,7 @@ export default function Timer() {
       </header>
 
       {/* メインコンテンツ */}
-      <main className="flex flex-col items-center gap-6 px-4 pt-4 pb-12 w-full max-w-md mx-auto flex-1">
+      <main className="flex flex-col items-center gap-6 px-4 pt-4 pb-12 w-full max-w-lg flex-1">
         <ModeSelector />
         <TimerDisplay />
         <Controls />
