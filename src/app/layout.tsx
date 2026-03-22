@@ -3,6 +3,9 @@ import { Geist } from "next/font/google";
 import "./globals.css";
 import { TimerProvider } from "@/contexts/TimerContext";
 import { ThemeProvider } from "@/contexts/ThemeContext";
+import { ProProvider } from "@/contexts/ProContext";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 const geist = Geist({ subsets: ["latin"] });
 
@@ -43,12 +46,23 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3334694024808500"
+          crossOrigin="anonymous"
+        />
       </head>
-      <body className={geist.className}>
+      <body className={`${geist.className} flex flex-col min-h-screen`}>
         <ThemeProvider>
-          <TimerProvider>
-            {children}
-          </TimerProvider>
+          <ProProvider>
+            <TimerProvider>
+              <Header />
+              <main className="flex-1">
+                {children}
+              </main>
+              <Footer />
+            </TimerProvider>
+          </ProProvider>
         </ThemeProvider>
       </body>
     </html>

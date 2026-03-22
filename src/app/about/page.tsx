@@ -122,9 +122,6 @@ export default function AboutPage() {
           </Link>
         </div>
 
-        <footer className="pt-6 border-t border-white/10 text-center text-white/30 text-xs">
-          © 2026 Tomatick · Free online Pomodoro timer
-        </footer>
       </div>
     </div>
   );
